@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="15.391" tests="3" skipped="0" failures="0" errors="0">
+<testcase classname="Login" name="As a user I login to ASK application with valid credentials - Example #1.1" time="6.134">
+<system-out><![CDATA[
+Given I open the url "http://ask-qa.portnov.com/"...........................passed
+When I type suteneko@rapidbeos.net in the email textbox.....................passed
+And I type test123 in the password textbox..................................passed
+And I click the Sign-In button..............................................passed
+And I wait for 2 seconds....................................................passed
+Then I should see the Home link in the side navigation menu.................passed
+And I click the Logout link from the side navigation menu...................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="As a user I login to ASK application with valid credentials - Example #1.2" time="4.566">
+<system-out><![CDATA[
+Given I open the url "http://ask-qa.portnov.com/"...........................passed
+When I type alisher123@antkander.com in the email textbox...................passed
+And I type test123 in the password textbox..................................passed
+And I click the Sign-In button..............................................passed
+And I wait for 2 seconds....................................................passed
+Then I should see the Home link in the side navigation menu.................passed
+And I click the Logout link from the side navigation menu...................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login" name="As a user I should not login to ASK application with invalid credentials - Example #1.1" time="4.523">
+<system-out><![CDATA[
+Given I open the url "http://ask-qa.portnov.com/"...........................passed
+When I type sutesneko@rapidbeosd.net in the email textbox...................passed
+And I type test1456 in the password textbox.................................passed
+And I click the Sign-In button..............................................passed
+And I wait for maximum of 10 seconds until the error message is displayed...passed
+Then I should see an error message..........................................passed
+]]></system-out>
+</testcase>
+</testsuite>
