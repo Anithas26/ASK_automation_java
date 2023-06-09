@@ -15,18 +15,18 @@ Feature:Login
       |suteneko@rapidbeos.net|test123|
       |alisher123@antkander.com|test123|
 
-#  @invalid_credentials
-#   Scenario Outline: As a user I should not login to ASK application with invalid credentials
-#    Given I open the url "http://ask-qa.portnov.com/"
-#    When I type <email> in the email textbox
-#    And I type <password> in the password textbox
-#    And I click the Sign-In button
-#    And I wait for maximum of 10 seconds until the error message is displayed
-#    Then I should see an error message
-#
-#     Examples:
-#       |email|password|
-#       |sutesneko@rapidbeosd.net|test1456|
+  @invalid_credentials
+   Scenario Outline: As a user I should not login to ASK application with invalid credentials
+    Given I open the url "http://ask-qa.portnov.com/" in "chrome"
+    When I type <email> in the email textbox
+    And I type <password> in the password textbox
+    And I click the Sign-In button
+    And I wait for maximum of 10 seconds until the error message is displayed
+    Then I should see an error message
+
+     Examples:
+       |email|password|
+       |sutesneko@rapidbeosd.net|test1456|
 
 
 

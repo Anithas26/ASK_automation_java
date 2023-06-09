@@ -11,14 +11,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 @CucumberOptions(
         features="src/test/resources/features",
         glue="Definitions",
-        monochrome = true,
+//        monochrome = true,
         plugin={
                 "pretty",
-                "html:target/cucumber.html",
+                "html:target/cucumber_html.html",
                 "json:target/JSONReports/jsonreport.json",
                 "junit:target/junitReports/junitreport.xml"},
         tags="@Login")
 
 public class TestRunner {
-
 }
