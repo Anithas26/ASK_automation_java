@@ -26,21 +26,21 @@ public class askStepDef {
     TestContext testContext;
     WebDriverWait wait;
 
-    @Before
-    public void lanuch_browser(){
-        switch ("chrome") {
-            case "chrome":
-                WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
-                break;
-            case "edge":
-                WebDriverManager.edgedriver().setup();
-                driver = new EdgeDriver();
-                break;
-        }
-        driver.manage().window().maximize();
-
-    }
+//    @Before
+//    public void lanuch_browser(){
+//        switch ("chrome") {
+//            case "chrome":
+//                WebDriverManager.chromedriver().setup();
+//                driver = new ChromeDriver();
+//                break;
+//            case "edge":
+//                WebDriverManager.edgedriver().setup();
+//                driver = new EdgeDriver();
+//                break;
+//        }
+//        driver.manage().window().maximize();
+//
+//    }
 
     @After
     public void teardown(){
@@ -48,11 +48,11 @@ public class askStepDef {
         driver.quit();
     }
 
-    @And("I quit from the browser window")
-    public void iQuitFromTheBrowserWindow() {
-        driver.close();
-        driver.quit();
-    }
+//    @And("I quit from the browser window")
+//    public void iQuitFromTheBrowserWindow() {
+//        driver.close();
+//        driver.quit();
+//    }
 
     @When("^I type (.*) in the email textbox$")
     public void iTypeEmailInTheEmailTextbox(String email) {
@@ -92,10 +92,10 @@ public class askStepDef {
         assertThat(driver.findElement(loginPage.btn_signIn).isDisplayed()).isTrue();
     }
 
-    @Given("I open the url {string}")
-    public void iOpenTheUrl(String url) {
-        driver.get(url);
-    }
+//    @Given("I open the url {string}")
+//    public void iOpenTheUrl(String url) {
+//        driver.get(url);
+//    }
 
     @Then("I should see an error message")
     public void iShouldSeeAnErrorMessage() {
@@ -107,5 +107,12 @@ public class askStepDef {
     public void iWaitForMaximumOfSecondsUntilTheErrorMessageIsDisplayed(int wait_time) {
         loginPage.waitUntilLocated(wait_time,loginPage.err_msg_invalidCredentials);
         assertThat(driver.findElement(loginPage.err_msg_invalidCredentials).isDisplayed()).isTrue();
+    }
+
+
+    @Given("I open the url {string} in {string}")
+    public void iOpenTheUrlIn(String url, String browser) {
+        testContext=new TestContext(driver);
+        testContext.lanuch_browser(url,browser);
     }
 }
